@@ -25,7 +25,7 @@ class CreateScreen extends Component {
 
     render() {
         const inputComp = this.state.complete ? 
-                          (<button>OK</button>) : <CreationForm stage={this.state.stage} onSubmit={this.onSubmit.bind(this)}/>;
+                          <SubmitButton text={this.state.text} /> : <CreationForm stage={this.state.stage} onSubmit={this.onSubmit.bind(this)}/>;
         return (
             <div>
                 <Sentence text={this.state.text} conditions={this.state.conditions}/>
