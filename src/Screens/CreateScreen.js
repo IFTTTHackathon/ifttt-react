@@ -18,16 +18,17 @@ class CreateScreen extends Component {
         this.state = {
             formShown: true,
             conditions: conditions,
-            complete: false
+            complete: false,
+            text: "Wenn ##, Dann ##"
         };
     }
 
     render() {
         const inputComp = this.state.complete ? 
-                          (<button>OK</button>) : <CreationForm options={this.nextUnanswered().options} onSelected={this.onSelected.bind(this)}/>;
+                          (<button>OK</button>) : <CreationForm stage={this.state.stage} onSubmit={this.onSubmit.bind(this)}/>;
         return (
             <div>
-                <Sentence conditions={this.state.conditions}/>
+                <Sentence text={this.state.text} conditions={this.state.conditions}/>
                 {inputComp}
             </div>
         );
@@ -50,6 +51,29 @@ class CreateScreen extends Component {
     nextUnanswered() {
         const unanswered = this.state.conditions.filter(cond => !cond.answer);
         return unanswered ? unanswered[0] : null;
+    }
+
+    onSubmit(value) {
+        var text = "";
+        var nextStage = "";
+        switch(value) {
+            case "categories":
+                text = "Wenn die Durchschnittstemperatur ## als ##°C war, Dann ##";
+                nextStage = "temperature";
+                break;
+            case "temperature":
+                text = "Wenn die Durschnittstemperatur diesen Monat höher als 10°C war, Dann ##";
+                nextStage = "action";
+                break;
+            case "mainAction":
+                text = "Wenn die Durschnittstemperatur diesen Monat höher als 10°C war, Dann investiere ##€";
+                nextStage = "investAmount";
+                break;
+        }
+        this.setState({
+            text: text,
+            stage: nextStage
+        });
     }
 }
 

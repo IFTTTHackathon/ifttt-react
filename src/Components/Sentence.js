@@ -8,14 +8,19 @@ class Sentence extends Component {
         const conditionComponents = this.props.conditions.map(item => 
             this.textFor(item)
         );
+        const segments = this.props.text.split('##');
+        var segmentViews = [];
+        for(var i = 0; i < segments.length; i++) {
+            segmentViews.push(<span style={{fontWeight: 'bold'}}>{segments[i]}</span>);
+            if(i < segments.length - 1 )
+                segmentViews.push(<div style={{display: 'inline-block', backgroundColor: '#aaa', border: '2px solid #333', cursor: 'pointer', width: '80px', height: '20px', verticalAlign: 'center'}}></div>);
+        }
         
         return (
             <div>
-                <span style={{fontWeight: 'bold'}}>Wenn </span>
-                {conditionComponents}
-                <span style={{fontWeight: 'bold'}}>Dann</span>
+                {segmentViews}
             </div>
-        )
+        );
     }
 
     textFor(item) {

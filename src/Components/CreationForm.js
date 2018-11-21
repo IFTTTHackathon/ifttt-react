@@ -5,10 +5,9 @@ class CreationForm extends Component {
         super(props);
     }
     render() {
-        if(!this.props.item)
-            return this.renderMainCategories();
-        if(this.props.item === "Durschnittstemperatur")
+        if(this.props.stage === "temperature")
             return this.renderTemperature();
+        return this.renderMainCategories();
     }
     renderMainCategories() {
         return (
@@ -16,13 +15,13 @@ class CreationForm extends Component {
                 <select defaultValue="" onChange={() => this.submitChanges("categories")}>
                     <option value="" disabled>Auswahl</option>
                     <option value="zahlungseingang">Zahlungseingang</option>
-                    <option value="kontostandt">Kontostand</option>
+                    <option value="kontostand">Kontostand</option>
                     <option value="temperatur">Durchschnittstemperatur</option>
                     <option value="ausgaben">Ausgaben</option>
                     <option value="kaufverhalten">Kaufverhalten</option>
                 </select>
             </div>
-        )
+        );
     }
 
     renderTemperature() {
@@ -35,9 +34,21 @@ class CreationForm extends Component {
                 </select>
                 <input style={{textAlign: 'right'}}size="2" type="text"></input>
                 <span>°C</span>
-                <button onClick={() => this.submitChanges("temperatur")}>OK</button>
+                <button onClick={() => this.submitChanges("temperature")}>OK</button>
             </div>
-        )
+        );
+    }
+
+    renderMainAction() {
+        return (
+            <div>
+                <select defaultValue="" onChange={() => this.submitChanges("mainAction")}>
+                    <option value="" disabled>Auswahl</option>
+                    <option value="zahlungseingang">Überweise</option>
+                    <option value="kontostand">Benachrichtige</option>
+                </select>
+            </div>
+        );
     }
 
     selectionChanged(event) {
