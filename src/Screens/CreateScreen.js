@@ -26,11 +26,11 @@ class CreateScreen extends Component {
 
     render() {
         const inputComp = this.state.complete ? 
-                          <SubmitButton text={this.state.text} /> : <CreationForm stage={this.state.stage} onSubmit={this.onSubmit.bind(this)}/>;
+                          '' : <CreationForm stage={this.state.stage} onSubmit={this.onSubmit.bind(this)}/>;
         return (
             <div>
-                <Sentence text={this.state.text} conditions={this.state.conditions}/>
                 {inputComp}
+                <Sentence text={this.state.text} conditions={this.state.conditions}/>
             </div>
         );
     }
@@ -59,16 +59,20 @@ class CreateScreen extends Component {
         var nextStage = "";
         switch(value) {
             case "categories":
-                text = "Wenn die Durchschnittstemperatur ## als ##°C war, Dann ##";
+                text = "Wenn die Temperatur ## als ##°C, dann ##";
                 nextStage = "temperature";
                 break;
             case "temperature":
-                text = "Wenn die Durschnittstemperatur diesen Monat höher als 10°C war, Dann ##";
+                text = "Wenn die Temperatur höher als 25°C, dann ##";
                 nextStage = "action";
                 break;
             case "mainAction":
-                text = "Wenn die Durschnittstemperatur diesen Monat höher als 10°C war, Dann investiere ##€";
-                nextStage = "investAmount";
+                text = "Wenn die Temperatur höher als 25°C, dann investiere ##€";
+                nextStage = "actionValue";
+                break;
+            case "actionValue":
+                text = "Wenn die Temperatur höher als 25°C, dann investiere 50€";
+                // nextStage = "actionValue";
                 break;
         }
         this.setState({

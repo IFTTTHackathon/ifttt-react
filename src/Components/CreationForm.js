@@ -5,8 +5,15 @@ class CreationForm extends Component {
         super(props);
     }
     render() {
+        console.log(this.props.stage);
+
         if(this.props.stage === "temperature")
             return this.renderTemperature();
+        if(this.props.stage === "action")
+            return this.renderMainAction();
+        if(this.props.stage === "actionValue")
+            return this.renderActionValue();
+
         return this.renderMainCategories();
     }
     renderMainCategories() {
@@ -16,7 +23,7 @@ class CreationForm extends Component {
                     <option value="" disabled>Auswahl</option>
                     <option value="zahlungseingang">Zahlungseingang</option>
                     <option value="kontostand">Kontostand</option>
-                    <option value="temperatur">Durchschnittstemperatur</option>
+                    <option value="temperatur">Temperatur</option>
                     <option value="ausgaben">Ausgaben</option>
                     <option value="kaufverhalten">Kaufverhalten</option>
                 </select>
@@ -32,7 +39,7 @@ class CreationForm extends Component {
                     <option value="Niedriger als">Niedriger als</option>
                     <option value="Höher als">Höher als</option>
                 </select>
-                <input style={{textAlign: 'right'}}size="2" type="text"></input>
+                <input style={{textAlign: 'right'}} size="2" type="text"></input>
                 <span>°C</span>
                 <button onClick={() => this.submitChanges("temperature")}>OK</button>
             </div>
@@ -47,6 +54,15 @@ class CreationForm extends Component {
                     <option value="zahlungseingang">Überweise</option>
                     <option value="kontostand">Benachrichtige</option>
                 </select>
+            </div>
+        );
+    }
+
+    renderActionValue() {
+        return (
+            <div>
+                <input style={{textAlign: 'right'}} size="2" type="text"></input>
+                <span>EUR</span>
             </div>
         );
     }

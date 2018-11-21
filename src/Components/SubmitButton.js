@@ -1,18 +1,21 @@
 import React, { Component } from 'react';
+import axios from 'axios';
 
 //Dieser Button wird angezeigt, wenn complete in CreateScreen.js true ist (Zeile 22 auf true setzen)
-var submitRequest = function (text) {
-    //TODO : Hier kann ein Backend Request passieren
-    //text beinhaltet den fertigen Satz (im Backend "parsen" ... ist ja hardcoded)
-    //axios muss evtl oben importiert werden
-    //Beispiel
-    /*axios.get('https://api.github.com/users/maecapozzi')
-    .then(response => console.log(response))*/
+var submitRequest = function (e) {
+    console.log(e);
+    console.log('abcdef');
+
+    axios.get('https://rest.ifttt.bnjmnrtl.com/hackrest/trigger?temp=50')
+    .then(response => console.log(response));
+
+    e.preventDefault();
+    e.stopPropagation();
 };
 
-var SubmitButton = function (props) {
+var SubmitButton = function (e) {
     return (
-        <button onClick={() => submitRequest(props.text)}>WennDann erstellen</button>
+        <button onClick={submitRequest}>WennDann erstellen</button>
     );
 };
 
