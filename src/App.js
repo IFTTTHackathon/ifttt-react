@@ -1,9 +1,17 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import CreateScreen from './Screens/CreateScreen';
 
 class App extends Component {
   render() {
+    return (
+      <div className="container">
+        <CreateScreen />
+      </div>
+    )
+  }
+  renderOld() {
     return (
       <div className="App">
         <header className="App-header">
