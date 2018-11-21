@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import CreationForm from '../Components/CreationForm.js';
 import Sentence from '../Components/Sentence.js';
+import SubmitButton from '../Components/SubmitButton.js';
 
 class CreateScreen extends Component {
     constructor(props) {
