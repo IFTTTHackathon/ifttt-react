@@ -4,7 +4,7 @@ class Sentence extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            condition: ["condition1", "NULL"],
+            condition: ["NULL"],
             action: []
         };
     }
@@ -12,6 +12,7 @@ class Sentence extends Component {
         const conditionComponents = this.state.condition.map(item => 
             this.textFor(item)
         );
+        
         return (
             <div>
                 <span style={{fontWeight: 'bold'}}>Wenn </span>

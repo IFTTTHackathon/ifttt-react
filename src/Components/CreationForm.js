@@ -11,13 +11,10 @@ class CreationForm extends Component {
     render() {
         return (
             <div>
-                <span>Wenn</span>
                 <select onChange={this.mainChanged.bind(this)}>
                     <option value="zahlungseingang">Zahlungseingang</option>
                     <option value="kontostand">Kontostand</option>
                 </select>
-                <span>Dann</span>
-                <select></select>
             </div>
         );
     }
