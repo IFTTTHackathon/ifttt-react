@@ -2,14 +2,10 @@ import React, { Component } from 'react';
 
 class Sentence extends Component {
     constructor(props) {
-        super(props);
-        this.state = {
-            condition: ["NULL"],
-            action: []
-        };
+        super(props);        
     }
     render() {
-        const conditionComponents = this.state.condition.map(item => 
+        const conditionComponents = this.props.conditions.map(item => 
             this.textFor(item)
         );
         
@@ -23,9 +19,11 @@ class Sentence extends Component {
     }
 
     textFor(item) {
-        if(item !== "NULL")
-            return (<span key={item}>{item} </span>);
-        return <pre onClick={this.props.onGapClicked} style={{display: 'inline', backgroundColor: '#aaa', border: '2px solid #333', cursor: 'pointer'}} key="gap">       </pre>;
+        if(item.answer || item.text) {
+            const text = item.text ? item.text : item.answer;
+            return (<span key={item}>{text} </span>);
+        }
+        return <div style={{display: 'inline-block', backgroundColor: '#aaa', border: '2px solid #333', cursor: 'pointer', width: '80px', height: '20px', verticalAlign: 'middle'}} key="gap"></div>;
     }
 }
 
