@@ -32,7 +32,7 @@ class CreateScreen extends Component {
 
             axios.get('https://rest.ifttt.bnjmnrtl.com/hackrest/trigger?temp=28')
                 .then(function (response) {
-                    if (response.data.trigger === false) {
+                    if (response.data.trigger === true) {
                         return;
                     }
 
