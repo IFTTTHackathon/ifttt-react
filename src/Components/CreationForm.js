@@ -73,7 +73,7 @@ class CreationForm extends Component {
                     <option value="spare">Spare</option>
                 </select>
                 <div style={{width: '5px', display: 'inline-block'}}></div>
-                <input style={{textAlign: 'right'}} size="2" type="text"></input>
+                <input style={{textAlign: 'right', marginRight: '3px'}} size="6" type="text"></input>
                 <span>EUR</span>
                 <div style={{width: '5px', display: 'inline-block'}}></div>
                 <button style={AppStyles.button} onClick={() => this.submitChanges("actionValue")}>OK</button>
