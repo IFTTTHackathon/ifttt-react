@@ -3,10 +3,14 @@ import axios from 'axios';
 
 //Dieser Button wird angezeigt, wenn complete in CreateScreen.js true ist (Zeile 22 auf true setzen)
 var submitRequest = function (e) {
-    console.log(e);
-    console.log('abcdef');
+    var data = {
+        targetTemperature: 25,
+        amount: 50,
+        sourceIban: "DE08 9999 9910 0000 1234 56",
+        targetIban: "DE02 9999 9910 0198 1369 39",
+    };
 
-    axios.get('https://rest.ifttt.bnjmnrtl.com/hackrest/trigger?temp=50')
+    axios.post('https://rest.ifttt.bnjmnrtl.com/hackrest/newIfttt', data)
     .then(response => console.log(response));
 
     e.preventDefault();

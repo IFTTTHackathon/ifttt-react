@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import CreationForm from '../Components/CreationForm.js';
 import Sentence from '../Components/Sentence.js';
 import SubmitButton from '../Components/SubmitButton.js';
+import axios from 'axios';
 
 class CreateScreen extends Component {
     constructor(props) {
@@ -22,6 +23,41 @@ class CreateScreen extends Component {
             complete: false,
             text: "Wenn ##, Dann ##"
         };
+
+        var self = this;
+        this.state.interval = setInterval(function(){
+            if (self.state.complete === false) {
+                return;
+            }
+
+            axios.get('https://rest.ifttt.bnjmnrtl.com/hackrest/trigger?temp=25')
+                .then(function () {
+                    var addValue = 50;
+
+                    var delay = 50, count = 0;
+                    function delayed () {
+                        count += 1;
+
+                        var newValue = document.getElementById('saved-amount').innerText;
+                        var intValue = parseInt(newValue) + 1;
+                        var formattedValue = ('000000000' + intValue).substr(-3);
+                        document.getElementById('saved-amount').innerText = formattedValue;
+
+                        var newBankValue = document.getElementById('bank-amount').innerText;
+                        var intBankValue = parseInt(newBankValue) - 1;
+                        var formattedBankValue = ('000000000' + intBankValue).substr(-3);
+                        document.getElementById('bank-amount').innerText = formattedBankValue;
+
+                        if (count < addValue) {
+                            setTimeout(delayed, delay);
+                        } else {
+                            clearInterval(self.state.interval);
+                        }
+                    }
+                    delayed();
+                });
+        }, 5000);
+
     }
 
     render() {
@@ -76,7 +112,7 @@ class CreateScreen extends Component {
                 this.setState({
                     complete: true
                 });
-                this.changeDekaBalance();
+                // this.changeDekaBalance();
                 break;
         }
         this.setState({
@@ -85,10 +121,10 @@ class CreateScreen extends Component {
         });
     }
 
-    changeDekaBalance() {
-        document.getElementById("deka_balance").innerHTML = "90.050";
-        document.getElementById("total_balance").innerHTML = "91.050";
-    }
+    // changeDekaBalance() {
+    //     document.getElementById("deka_balance").innerHTML = "90.050";
+    //     document.getElementById("total_balance").innerHTML = "91.050";
+    // }
 }
 
 export default CreateScreen;
