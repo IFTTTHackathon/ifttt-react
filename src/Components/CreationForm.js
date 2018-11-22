@@ -34,6 +34,9 @@ class CreationForm extends Component {
     renderTemperature() {
         return (
             <div>
+                <select value="temperatur" defaultValue="temperatur">
+                    <option value="temperatur">Temperatur</option>
+                </select>
                 <select defaultValue="">
                     <option value="" disabled>Vergleich</option>
                     <option value="Niedriger als">Niedriger als</option>
@@ -41,7 +44,7 @@ class CreationForm extends Component {
                 </select>
                 <input style={{textAlign: 'right'}} size="2" type="text"></input>
                 <span>°C</span>
-                <button onClick={() => this.submitChanges("temperature")}>OK</button>
+                <button style={{marginLeft: '5px'}} onClick={() => this.submitChanges("temperature")}>OK</button>
             </div>
         );
     }
@@ -51,7 +54,8 @@ class CreationForm extends Component {
             <div>
                 <select defaultValue="" onChange={() => this.submitChanges("mainAction")}>
                     <option value="" disabled>Auswahl</option>
-                    <option value="zahlungseingang">Überweise</option>
+                    <option value="ueberweise">Überweise</option>
+                    <option value="investiere">Investiere</option>
                     <option value="kontostand">Benachrichtige</option>
                 </select>
             </div>
@@ -61,8 +65,12 @@ class CreationForm extends Component {
     renderActionValue() {
         return (
             <div>
+                <select value="investiere">
+                    <option value="investiere">Investiere</option>
+                </select>
                 <input style={{textAlign: 'right'}} size="2" type="text"></input>
                 <span>EUR</span>
+                <button onClick={() => this.submitChanges("actionValue")}>OK</button>
             </div>
         );
     }

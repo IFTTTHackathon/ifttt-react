@@ -10,14 +10,16 @@ class Sentence extends Component {
         );
         const segments = this.props.text.split('##');
         var segmentViews = [];
+        var borderStyle = '2px solid red';
         for(var i = 0; i < segments.length; i++) {
             segmentViews.push(<span style={{fontWeight: 'normal'}}>{segments[i]}</span>);
-            if(i < segments.length - 1 )
-                segmentViews.push(<div style={{display: 'inline-block', backgroundColor: '#aaa', border: '2px solid #333', cursor: 'pointer', width: '80px', height: '20px', verticalAlign: 'center'}}></div>);
+            if(i < segments.length - 1 ) {
+                segmentViews.push(<div style={{display: 'inline-block', backgroundColor: '#fff', border: borderStyle, cursor: 'pointer', width: '80px', height: '20px', verticalAlign: 'center'}}></div>);
+            }
         }
         
         return (
-            <div>
+            <div style={{marginTop: '10px', fontSize: '1.5em'}}>
                 {segmentViews}
             </div>
         );

@@ -72,13 +72,22 @@ class CreateScreen extends Component {
                 break;
             case "actionValue":
                 text = "Wenn die Temperatur höher als 25°C, dann investiere 50€";
-                // nextStage = "actionValue";
+                nextStage = "completeSentence";
+                this.setState({
+                    complete: true
+                });
+                this.changeDekaBalance();
                 break;
         }
         this.setState({
             text: text,
             stage: nextStage
         });
+    }
+
+    changeDekaBalance() {
+        document.getElementById("deka_balance").innerHTML = "90.050";
+        document.getElementById("total_balance").innerHTML = "91.050";
     }
 }
 
