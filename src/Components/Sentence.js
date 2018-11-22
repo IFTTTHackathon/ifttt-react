@@ -10,7 +10,7 @@ class Sentence extends Component {
         );
         const segments = this.props.text.split('##');
         var segmentViews = [];
-        var borderStyle = '2px solid red';
+        var borderStyle = '1px solid red';
         for(var i = 0; i < segments.length; i++) {
             segmentViews.push(<span style={{fontWeight: 'normal'}}>{segments[i]}</span>);
             if(i < segments.length - 1 ) {

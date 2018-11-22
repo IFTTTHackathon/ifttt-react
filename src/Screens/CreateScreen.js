@@ -30,8 +30,12 @@ class CreateScreen extends Component {
                 return;
             }
 
-            axios.get('https://rest.ifttt.bnjmnrtl.com/hackrest/trigger?temp=25')
-                .then(function () {
+            axios.get('https://rest.ifttt.bnjmnrtl.com/hackrest/trigger?temp=28')
+                .then(function (response) {
+                    if (response.data.trigger === false) {
+                        return;
+                    }
+
                     var addValue = 50;
 
                     var delay = 50, count = 0;
@@ -99,20 +103,20 @@ class CreateScreen extends Component {
                 nextStage = "temperature";
                 break;
             case "temperature":
-                text = "Wenn die Temperatur höher als 25°C, dann ##";
+                text = "Wenn die Temperatur höher als 28°C, dann ##";
                 nextStage = "action";
                 break;
             case "mainAction":
-                text = "Wenn die Temperatur höher als 25°C, dann investiere ##€";
+                text = "Wenn die Temperatur höher als 28°C, dann spare ##€";
                 nextStage = "actionValue";
                 break;
             case "actionValue":
-                text = "Wenn die Temperatur höher als 25°C, dann investiere 50€";
+                text = "";
                 nextStage = "completeSentence";
                 this.setState({
                     complete: true
                 });
-                // this.changeDekaBalance();
+                this.showWennDannBox();
                 break;
         }
         this.setState({
@@ -121,10 +125,15 @@ class CreateScreen extends Component {
         });
     }
 
-    // changeDekaBalance() {
-    //     document.getElementById("deka_balance").innerHTML = "90.050";
-    //     document.getElementById("total_balance").innerHTML = "91.050";
-    // }
+    showWennDannBox() {
+        var wennDannTempBox = document.getElementsByClassName("wenn-dann-temp");
+        console.log(wennDannTempBox);
+        wennDannTempBox[0].style = 'display: block; background-color: beige; height: 113px;';
+
+        setTimeout(function(){
+            wennDannTempBox[0].style = 'display: block; background-color: transparent; height: 113px;';
+        }, 4000);
+    }
 }
 
 export default CreateScreen;

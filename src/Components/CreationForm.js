@@ -37,13 +37,16 @@ class CreationForm extends Component {
                 <select value="temperatur" defaultValue="temperatur">
                     <option value="temperatur">Temperatur</option>
                 </select>
+                <div style={{width: '5px', display: 'inline-block'}}></div>
                 <select defaultValue="">
                     <option value="" disabled>Vergleich</option>
                     <option value="Niedriger als">Niedriger als</option>
                     <option value="Höher als">Höher als</option>
                 </select>
+                <div style={{width: '5px', display: 'inline-block'}}></div>
                 <input style={{textAlign: 'right'}} size="2" type="text"></input>
                 <span>°C</span>
+                <div style={{width: '5px', display: 'inline-block'}}></div>
                 <button style={{marginLeft: '5px'}} onClick={() => this.submitChanges("temperature")}>OK</button>
             </div>
         );
@@ -55,7 +58,7 @@ class CreationForm extends Component {
                 <select defaultValue="" onChange={() => this.submitChanges("mainAction")}>
                     <option value="" disabled>Auswahl</option>
                     <option value="ueberweise">Überweise</option>
-                    <option value="investiere">Investiere</option>
+                    <option value="sparen">Spare</option>
                     <option value="kontostand">Benachrichtige</option>
                 </select>
             </div>
@@ -65,11 +68,13 @@ class CreationForm extends Component {
     renderActionValue() {
         return (
             <div>
-                <select value="investiere">
-                    <option value="investiere">Investiere</option>
+                <select value="spare">
+                    <option value="spare">Spare</option>
                 </select>
+                <div style={{width: '5px', display: 'inline-block'}}></div>
                 <input style={{textAlign: 'right'}} size="2" type="text"></input>
                 <span>EUR</span>
+                <div style={{width: '5px', display: 'inline-block'}}></div>
                 <button onClick={() => this.submitChanges("actionValue")}>OK</button>
             </div>
         );
