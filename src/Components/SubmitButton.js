@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import AppStyles from '../AppStyles';
 
 //Dieser Button wird angezeigt, wenn complete in CreateScreen.js true ist (Zeile 22 auf true setzen)
 var submitRequest = function (e) {
@@ -19,7 +20,7 @@ var submitRequest = function (e) {
 
 var SubmitButton = function (e) {
     return (
-        <button onClick={submitRequest}>WennDann erstellen</button>
+        <button style={AppStyles.button} onClick={submitRequest}>WennDann erstellen</button>
     );
 };
 

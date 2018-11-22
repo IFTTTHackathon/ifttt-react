@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import AppStyles from '../AppStyles';
 
 class CreationForm extends Component {
     constructor(props) {
@@ -47,7 +48,7 @@ class CreationForm extends Component {
                 <input style={{textAlign: 'right'}} size="2" type="text"></input>
                 <span>°C</span>
                 <div style={{width: '5px', display: 'inline-block'}}></div>
-                <button style={{marginLeft: '5px'}} onClick={() => this.submitChanges("temperature")}>OK</button>
+                <button style={AppStyles.button} onClick={() => this.submitChanges("temperature")}>OK</button>
             </div>
         );
     }
@@ -75,7 +76,7 @@ class CreationForm extends Component {
                 <input style={{textAlign: 'right'}} size="2" type="text"></input>
                 <span>EUR</span>
                 <div style={{width: '5px', display: 'inline-block'}}></div>
-                <button onClick={() => this.submitChanges("actionValue")}>OK</button>
+                <button style={AppStyles.button} onClick={() => this.submitChanges("actionValue")}>OK</button>
             </div>
         );
     }
