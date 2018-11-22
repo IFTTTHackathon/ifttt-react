@@ -127,7 +127,6 @@ class CreateScreen extends Component {
 
     showWennDannBox() {
         var wennDannTempBox = document.getElementsByClassName("wenn-dann-temp");
-        console.log(wennDannTempBox);
         wennDannTempBox[0].style = 'display: block; background-color: beige; height: 113px;';
 
         setTimeout(function(){

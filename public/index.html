@@ -334,7 +334,8 @@ IF = {
 		if(fenster != null) {
 			fenster.focus();
 		}
-	}
+	},
+
 };
 
 }());
@@ -360,6 +361,20 @@ return false
 }());
 
  -->
+
+function addToMyWennDanns() {
+    var myListWennDannBox = document.getElementsByClassName("wenn-dann-in-my-list");
+    var storeWennDannBox = document.getElementsByClassName("wenn-dann-im-store");
+
+    myListWennDannBox[0].style = 'display: block; background-color: beige; height: 113px;';
+    storeWennDannBox[0].style = 'display: none;';
+
+    setTimeout(function(){
+        myListWennDannBox[0].style = 'display: block; background-color: transparent; height: 113px;';
+    }, 4000);
+
+    return false;
+}
 </script>
 <div style="position:absolute;top:0px;"><input type="text" name="ohwrNkTuSlFgDejn" id="ohwrNkTuSlFgDejn" value="0" disabled="disabled" style="DISPLAY: none" class="" size="1"></div>
 
@@ -688,6 +703,30 @@ return false
 				<td><div class="ficon icon-if5_symbol_banking_7 rank1"><input type="submit" name="gdmmQMxbOxNmRGgD" title="Bearbeiten" value="Bearbeiten" onclick="return IF.checkFirstSubmit();" class=""></div><div class="ficon icon-if5_symbol_banking_7 rank2"><input type="submit" name="fgZvObvyoWpeuhlY" title="Löschen" value="Löschen" onclick="return IF.checkFirstSubmit();" class=""></div><div class="ficon icon-if5_i_aktionen rank5"><input type="submit" name="wwltXSzwWzcBYOtv" title="Mehr" value="Mehr" onclick="return IF.checkFirstSubmit();" class=""></div></td>
 			</tr>
 
+			<tr class="tablerowodd opened hoverable wenn-dann-in-my-list" style="display: none;" role="region" id="aria1542794512020-0-0" aria-labelledby="aria1542794512020-0-td" aria-level="3">
+
+				<td class="left" style="width: 461px;">
+					<div class="finaccount" style="width: 550px;">
+
+						<span class="title icon-fi-sparkasse">Wenn <strong>50 EUR Umsatz</strong>, dann <strong style="color: #00724b">5 EUR spenden</strong></span>
+						<span class="iban">Spenden beim regelmäßigen Einkauf bei Bäckerei Müller</span>
+
+					</div>
+				</td>
+
+
+
+				<td class="right">
+
+					<div class="balance">
+					</div>
+
+
+				</td>
+
+
+				<td><div class="ficon icon-if5_symbol_banking_7 rank1"><input type="submit" name="gdmmQMxbOxNmRGgD" title="Übernehmen" value="Übernehmen" onclick="return IF.checkFirstSubmit();" class=""></div><div class="ficon icon-if5_symbol_banking_7 rank2"><input type="submit" name="fgZvObvyoWpeuhlY" title="Ausblenden" value="Ausblenden" onclick="return IF.checkFirstSubmit();" class=""></div><div class="ficon icon-if5_i_aktionen rank5"><input type="submit" name="wwltXSzwWzcBYOtv" title="Mehr" value="Mehr" onclick="return IF.checkFirstSubmit();" class=""></div></td>
+			</tr>
 
 
 
@@ -724,7 +763,7 @@ return false
 			</tr>
 
 
-			<tr class="tablerowodd opened hoverable" role="region" id="aria1542794512020-0-0" aria-labelledby="aria1542794512020-0-td" aria-level="3">
+			<tr class="tablerowodd opened hoverable wenn-dann-im-store" role="region" id="aria1542794512020-0-0" aria-labelledby="aria1542794512020-0-td" aria-level="3">
 
 				<td class="left" style="width: 461px;">
 					<div class="finaccount" style="width: 550px;">
@@ -751,17 +790,37 @@ return false
 
 
 
+				<td><div class="ficon icon-if5_symbol_banking_7 rank1"><input type="submit" name="gdmmQMxbOxNmRGgD" title="Übernehmen" value="Übernehmen" onclick="return addToMyWennDanns();" class=""></div><div class="ficon icon-if5_symbol_banking_7 rank2"><input type="submit" name="fgZvObvyoWpeuhlY" title="Ausblenden" value="Ausblenden" onclick="return IF.checkFirstSubmit();" class=""></div><div class="ficon icon-if5_i_aktionen rank5"><input type="submit" name="wwltXSzwWzcBYOtv" title="Mehr" value="Mehr" onclick="return IF.checkFirstSubmit();" class=""></div></td>
+			</tr>
+
+			<tr class="tablerowodd opened hoverable" role="region" id="aria1542794512020-0-5" aria-labelledby="aria1542794512020-0-td" aria-level="3">
+
+				<td class="left" style="width: 461px;">
+					<div class="finaccount" style="width: 550px;">
+
+						<span class="title icon-fi-sparkasse">Wenn <strong>10. Einkauf</strong>, dann <strong style="color: #00724b">10% Rabatt</strong></span>
+						<span class="iban">Sparen beim regelmäßigen Einkauf bei Tante Emma</span>
+
+					</div>
+				</td>
+
+
+
+				<td class="right">
+
+					<div class="balance">
+					</div>
+
+
+
+
+
+				</td>
+
+
+
+
 				<td><div class="ficon icon-if5_symbol_banking_7 rank1"><input type="submit" name="gdmmQMxbOxNmRGgD" title="Übernehmen" value="Übernehmen" onclick="return IF.checkFirstSubmit();" class=""></div><div class="ficon icon-if5_symbol_banking_7 rank2"><input type="submit" name="fgZvObvyoWpeuhlY" title="Ausblenden" value="Ausblenden" onclick="return IF.checkFirstSubmit();" class=""></div><div class="ficon icon-if5_i_aktionen rank5"><input type="submit" name="wwltXSzwWzcBYOtv" title="Mehr" value="Mehr" onclick="return IF.checkFirstSubmit();" class=""></div></td>
-
-
-
-
-
-
-
-
-
-
 			</tr>
 
 			</tbody></table>
