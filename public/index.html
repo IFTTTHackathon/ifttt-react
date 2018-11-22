@@ -94,6 +94,30 @@ return false
 
  -->
 </script>
+<style>
+	.icon-wenndann:before {
+		background-image: url(logowenndann.png);
+		-webkit-background-size: 30px;
+		background-size: 30px;
+		background-repeat: no-repeat;
+		color:transparent !important;
+	}
+	.icon-baeckerei:before {
+		background-image: url(logohuck.png);
+		-webkit-background-size: 40px;
+		background-size: 40px;
+		background-repeat: no-repeat;
+		color:transparent !important;
+	}
+	.icon-querbeet:before {
+		background-image: url(logoquerbeet.png);
+		-webkit-background-size: 40px;
+		background-size: 40px;
+		background-repeat: no-repeat;
+		color:transparent !important;
+	}
+</style>
+
 <div style="position:absolute;top:0px;"><input type="text" name="MVAQazPZyirvTcGt" id="MVAQazPZyirvTcGt" value="0" disabled="disabled" style="DISPLAY: none" class="nonempty" size="1"></div>
 		<p>Max Mustermann</p>
 		<div class="logout">
@@ -667,7 +691,7 @@ function addToMyWennDanns() {
 				<td class="left" style="width: 461px;">
 					<div class="finaccount" style="width: 441px;">
 
-						<span class="title icon-fi-sparkasse">Wenn <strong>Temperatur > 28 Grad</strong>, dann spare <strong style="color: #00724b">50 EUR</strong></span>
+						<span class="title icon-fi-sparkasse icon-wenndann">Wenn <strong>Temperatur > 28 Grad</strong>, dann spare <strong style="color: #00724b">50 EUR</strong></span>
 						<span class="iban">Sparen bei gutem Wetter</span>
 
 					</div>
@@ -687,7 +711,7 @@ function addToMyWennDanns() {
 				<td class="left" style="width: 461px;">
 					<div class="finaccount" style="width: 550px;">
 
-						<span class="title icon-fi-sparkasse">Wenn <strong>Gehalt > 3500 EUR</strong>, dann <strong style="color: #00724b">100 EUR in Depot</strong></span>
+						<span class="title icon-fi-sparkasse icon-wenndann">Wenn <strong>Gehalt > 3500 EUR</strong>, dann <strong style="color: #00724b">100 EUR in Depot</strong></span>
 						<span class="iban">Sparen mit dem Weihnachtsgeld</span>
 
 					</div>
@@ -708,8 +732,8 @@ function addToMyWennDanns() {
 				<td class="left" style="width: 461px;">
 					<div class="finaccount" style="width: 550px;">
 
-						<span class="title icon-fi-sparkasse">Wenn <strong>50 EUR Umsatz</strong>, dann <strong style="color: #00724b">5 EUR spenden</strong></span>
-						<span class="iban">Spenden beim regelmäßigen Einkauf bei Bäckerei Müller</span>
+						<span class="title icon-fi-sparkasse icon-baeckerei">Wenn <strong>50 EUR Umsatz</strong>, dann <strong style="color: #00724b">5 EUR spenden</strong></span>
+						<span class="iban">Spenden beim regelmäßigen Einkauf bei Bäckerei Huck</span>
 
 					</div>
 				</td>
@@ -725,7 +749,7 @@ function addToMyWennDanns() {
 				</td>
 
 
-				<td><div class="ficon icon-if5_symbol_banking_7 rank1"><input type="submit" name="gdmmQMxbOxNmRGgD" title="Übernehmen" value="Übernehmen" onclick="return IF.checkFirstSubmit();" class=""></div><div class="ficon icon-if5_symbol_banking_7 rank2"><input type="submit" name="fgZvObvyoWpeuhlY" title="Ausblenden" value="Ausblenden" onclick="return IF.checkFirstSubmit();" class=""></div><div class="ficon icon-if5_i_aktionen rank5"><input type="submit" name="wwltXSzwWzcBYOtv" title="Mehr" value="Mehr" onclick="return IF.checkFirstSubmit();" class=""></div></td>
+				<td><div class="ficon icon-if5_symbol_banking_7 rank1"><input type="submit" name="gdmmQMxbOxNmRGgD" title="Bearbeiten" value="Bearbeiten" onclick="return IF.checkFirstSubmit();" class=""></div><div class="ficon icon-if5_symbol_banking_7 rank2"><input type="submit" name="fgZvObvyoWpeuhlY" title="Löschen" value="Löschen" onclick="return IF.checkFirstSubmit();" class=""></div><div class="ficon icon-if5_i_aktionen rank5"><input type="submit" name="wwltXSzwWzcBYOtv" title="Mehr" value="Mehr" onclick="return IF.checkFirstSubmit();" class=""></div></td>
 			</tr>
 
 
@@ -768,8 +792,8 @@ function addToMyWennDanns() {
 				<td class="left" style="width: 461px;">
 					<div class="finaccount" style="width: 550px;">
 
-						<span class="title icon-fi-sparkasse">Wenn <strong>50 EUR Umsatz</strong>, dann <strong style="color: #00724b">5 EUR spenden</strong></span>
-						<span class="iban">Spenden beim regelmäßigen Einkauf bei Bäckerei Müller</span>
+						<span class="title icon-fi-sparkasse icon-baeckerei">Wenn <strong>50 EUR Umsatz</strong>, dann <strong style="color: #00724b">5 EUR spenden</strong></span>
+						<span class="iban">Spenden beim regelmäßigen Einkauf bei Bäckerei Huck</span>
 
 					</div>
 				</td>
@@ -798,8 +822,8 @@ function addToMyWennDanns() {
 				<td class="left" style="width: 461px;">
 					<div class="finaccount" style="width: 550px;">
 
-						<span class="title icon-fi-sparkasse">Wenn <strong>10. Einkauf</strong>, dann <strong style="color: #00724b">10% Rabatt</strong></span>
-						<span class="iban">Sparen beim regelmäßigen Einkauf bei Tante Emma</span>
+						<span class="title icon-fi-sparkasse icon-querbeet">Wenn <strong>10. Einkauf</strong>, dann <strong style="color: #00724b">10% Rabatt</strong></span>
+						<span class="iban">Sparen beim regelmäßigen bei Gemüsehandel Querbeet</span>
 
 					</div>
 				</td>
